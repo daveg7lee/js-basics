@@ -55,6 +55,10 @@ body {
   margin: 30px;
 }
 
+.js-form {
+  margin-bottom: 30px;
+}
+
 .js-greetings {
   color: white;
   font-size: 40px;
