@@ -29,8 +29,8 @@ function paintToDo(text) {
   delBtn.innerText = "❌";
   delBtn.addEventListener("click", deleteToDo);
   span.innerText = text;
-  li.appendChild(delBtn);
   li.appendChild(span);
+  li.appendChild(delBtn);
   li.id = newId;
   toDoList.appendChild(li);
   const toDoObj = {
@@ -48,6 +48,14 @@ function handleSubmit(event) {
   toDoInput.value = "";
 }
 
+function hideScroll() {
+  if (toDos < 1) {
+    toDoList.setAttribute("class", "hideScroll");
+  } else {
+    toDoList.classList.remove("hideScroll");
+  }
+}
+
 function loadToDos() {
   const loadedToDos = localStorage.getItem(TODOS_LS);
   if (loadedToDos !== null) {
@@ -60,6 +68,7 @@ function loadToDos() {
 
 function init() {
   loadToDos();
+  setInterval(hideScroll, 1);
   toDoForm.addEventListener("submit", handleSubmit);
 }
 

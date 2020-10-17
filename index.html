@@ -4,10 +4,15 @@
     <title>Something</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="reset.css">
 </head>
 
 <body>
-    <div class="js-clock">
+    <header>
+        <h4 class="js-location"></h4>
+        <span class="js-weather"></span>
+    </header>
+    <div class="js-clock clock">
         <h1>00:00</h1>
     </div>
     <form class="js-form form">
@@ -19,7 +24,6 @@
     </form>
     <ul class="js-toDoList">
     </ul>
-    <span class="js-weather"></span>
     <script src="todo.js"></script>
     <script src="greeting.js"></script>
     <script src="clock.js"></script>
