@@ -45,11 +45,15 @@ function handleSubmit(event) {
   event.preventDefault();
   const currentValue = toDoInput.value;
   const loadedToDos = localStorage.getItem(TODOS_LS);
-  const parsedToDos = JSON.parse(loadedToDos);
-  if (parsedToDos.length < 10) {
-    paintToDo(currentValue);
+  if (loadedToDos !== null) {
+    const parsedToDos = JSON.parse(loadedToDos);
+    if (parsedToDos.length < 10) {
+      paintToDo(currentValue);
+    } else {
+      alert("The 10 To Dos is max");
+    }
   } else {
-    alert("The 10 To Dos is max");
+    paintToDo(currentValue);
   }
   toDoInput.value = "";
 }
